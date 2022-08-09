@@ -8,8 +8,8 @@ Welcome to Web Crawler's API Documentation!
    getting_started
    web_crawler_api
 
-Indices and tables
-==================
+Index
+======
 
 * :ref:`genindex`
 * :ref:`modindex`
