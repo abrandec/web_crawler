@@ -30,8 +30,7 @@ $ make
 ```
 $ make tests
 ``` 
-## API Documentation
-NOT WORKING YET
+### [API Documentation](https://abrandec.github.io/web_crawler/)
 
 ## License
 [MIT](https://github.com/abrandec/web_crawler/blob/main/MIT-LICENSE.txt)
