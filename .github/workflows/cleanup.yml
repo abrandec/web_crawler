@@ -11,6 +11,7 @@ jobs:
         fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
     - name: Cleanup html
       run: |
+        sleep 120
         rm -r ./docs/html
     - name: Commit files
       run: |
