@@ -14,6 +14,7 @@ from bs4 import BeautifulSoup
 # pylint: disable=import-error
 # pylint: disable=invalid-name
 # pylint: disable=unused-variable
+# pylint: disable=too-many-arguments
 
 @dataclasses.dataclass
 class web_crawler:

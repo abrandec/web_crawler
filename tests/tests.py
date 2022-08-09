@@ -1,11 +1,13 @@
 """ Web Crawler Unit Tests """
 import os
-import logging
 import pytest
 from web_crawler.module import web_crawler
 
+# pylint: disable=unnecessary-pass
+
 @pytest.fixture
 def setup():
+    """ Setup dummy data """
     pass
 
 def test_download_simple():
@@ -15,14 +17,9 @@ def test_download_simple():
     max_depth = 1
     save_dest = './tests/test_downloads'
     crawler = web_crawler(timeout, no_go_domains, max_depth, save_dest, False)
-    saved_urls = []
     saved_dests = []
-
-    saved_urls, saved_dests = crawler.crawl(["http://www.twitter.com"])
-    print(saved_dests)
+    _, saved_dests = crawler.crawl(["http://www.twitter.com"])
     for dest in saved_dests:
-        assert os.path.exists(dest) == True
+        assert os.path.exists(dest) is True
     print("✅ All files saved - PASS")
-
-def test_links():
-    pass
+    

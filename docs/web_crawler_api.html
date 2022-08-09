@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>web_crawler API &#8212; Web Crawler 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -35,8 +35,50 @@
             
   <section id="web-crawler-api">
 <h1>web_crawler API<a class="headerlink" href="#web-crawler-api" title="Permalink to this heading">¶</a></h1>
-<section id="web-crawler-module-module">
-<h2>web_crawler.module module<a class="headerlink" href="#web-crawler-module-module" title="Permalink to this heading">¶</a></h2>
+<section id="module-web_crawler.module">
+<span id="web-crawler-module-module"></span><h2>web_crawler.module module<a class="headerlink" href="#module-web_crawler.module" title="Permalink to this heading">¶</a></h2>
+<p>Web Crawler Module v0.0.1</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="web_crawler.module.web_crawler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">web_crawler.module.</span></span><span class="sig-name descname"><span class="pre">web_crawler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_timeout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_go_domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_crawler.module.web_crawler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Web crawler class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="web_crawler.module.web_crawler.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_timeout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_go_domains</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_dest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_crawler.module.web_crawler.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize web crawler</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url_timeout</strong> (<em>int</em>) – timeout for web requests in seconds</p></li>
+<li><p><strong>no_go_domains</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – list of domains to not crawl</p></li>
+<li><p><strong>max_depth</strong> (<em>int</em>) – max page depth to crawl</p></li>
+<li><p><strong>file_type_regex</strong> (<em>str</em>) – regex to match file types</p></li>
+<li><p><strong>save_dest</strong> (<em>str</em>) – directory to save files to</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="web_crawler.module.web_crawler.crawl">
+<span class="sig-name descname"><span class="pre">crawl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_crawler.module.web_crawler.crawl" title="Permalink to this definition">¶</a></dt>
+<dd><p>crawl webpages and save to local directory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url_list</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – list of urls to crawl</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>tuple of saved urls and saved url destinations</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>tuple(list[str], list[str])</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
@@ -61,7 +103,7 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">web_crawler API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#web-crawler-module-module">web_crawler.module module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-web_crawler.module">web_crawler.module module</a></li>
 </ul>
 </li>
 </ul>
@@ -100,7 +142,7 @@
       &copy;2022, Abran DeCarlo.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.1.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
