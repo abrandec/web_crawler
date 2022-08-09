@@ -46,7 +46,6 @@ jobs:
       - run: |
           cd docs/source
           make html
-          rm -r html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -54,16 +53,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
-      - name: Cleanup files
-        uses: /
-        with:
-          owner: ${{ github.repository_owner }}
-          repo: trigger-workflow-and-wait
-          ref: ${{ github.event.repository.default_branch || 'master' }}
-          github_token: ${{ secrets.SECRET_PERSONAL_TOKEN }}
-          workflow_file_name: cleanup.yaml
-          client_payload: '{"test": "true"}'
-          wait_interval: 11
-          trigger_workflow: true
-          wait_workflow: true
-          propagate_failure: true
