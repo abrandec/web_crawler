@@ -46,6 +46,7 @@ jobs:
       - run: |
           cd docs/source
           make html
+          rm -r html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

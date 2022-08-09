@@ -48,7 +48,8 @@ class web_crawler:
 
         self.saved_urls = []
         self.saved_url_dest = []
-    
+        self.__format_no_go_domains()
+
     #                   #
     #   ERROR HANDLING  #
     #                   #   
@@ -68,6 +69,13 @@ class web_crawler:
                     print(f"❌ {error} - {url}")
                 case _:
                     print(f"{self.__wht_space(depth)}├ {depth}/{self.max_depth} ❌ {error} - {url}")
+    
+    def __format_no_go_domains(self):
+        """ 
+        strip http, etc headers with regex
+        """
+        for i, domain in enumerate(self.no_go_domains):
+            self.no_go_domains[i] = re.sub('https?:\/\/|(www\.)?|ftp?:\/\/', '', domain)
 
     def __no_go_domain(self, url, depth):
         """ 
@@ -81,11 +89,10 @@ class web_crawler:
         :return: True if domain is forbidden, else False
         :rtype: bool
         """
-        for no_go_domain in self.no_go_domains:
-            if no_go_domain in urlparse(url).netloc:
-                if self.debug_mode:
-                    print(f"{self.__wht_space(depth)}├ {depth}/{self.max_depth} ❌ No go domain: {no_go_domain}")
-                return True
+        if urlparse(url).netloc in self.no_go_domains:
+            if self.debug_mode:
+                print(f"{self.__wht_space(depth)}├ {depth}/{self.max_depth} ❌ No go domain: {url}")
+            return True
         return False
     
     #                #      
