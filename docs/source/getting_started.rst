@@ -17,5 +17,5 @@ Example Usage:
 An example program using the Web Crawler API is available at:
 
 ```
-https://github.com/abrandec/web_crawler/examples/crawler_example.py
+https://github.com/abrandec/web_crawler/blob/main/example/crawler_example.py
 ```
